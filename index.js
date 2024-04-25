@@ -25,7 +25,7 @@ const today = new Date();
 const dayOfWeek = days[today.getDay()];
 const dayOfMonth = today.getDate();
 const month = months[today.getMonth()];
-const localTime = today.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); // Local time without seconds
+const localTime = today.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 const formattedDate = `${dayOfWeek}, ${dayOfMonth} ${month}`;
 
 app.use(express.static("public"));

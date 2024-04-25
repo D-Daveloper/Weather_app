@@ -207,7 +207,7 @@ main{
 }
 
 .sun{
-    width: 10rem;
+    width: clamp(4rem,10rem,100%);
 }
 
 .sun-undertext{
@@ -245,7 +245,7 @@ main{
     border-radius: 40px;
     box-shadow: 10px 5px 5px black;
     background-color: #444444;
-    flex: 1;
+    /* flex: 1; */
     flex-direction: column;
     margin-top: 20px;
     padding: 20px;
@@ -277,12 +277,12 @@ li{
     gap: 20px;
 }
 .lower-box2{
+    width: 100%;
     color: #FFFFFF;
     display: flex;
     border-radius: 40px;
     box-shadow: 10px 5px 5px black;
     background-color: #444444;
-    flex: 2;
     flex-direction: column;
     margin-top: 20px;
     padding: 20px;
@@ -292,7 +292,6 @@ li{
 }
 .lower-box2 ul{
     display: flex;
-    gap: 20px;
     justify-content: space-around;
 }
 
@@ -310,3 +309,40 @@ li{
     opacity: 100%;
     align-items: center;
 }
+ @media (max-width:935px) {
+    .box2{
+        flex-wrap: wrap;
+    }
+    .outer-factors-box{
+        width: 100%;
+        justify-content: space-between;
+    }
+ }
+ @media (max-width:670px) {
+    .body{
+        flex-direction: column;
+    }
+    .lower-box2 ul{
+        flex-wrap: wrap;
+    }
+    .box1{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .box1 p:last-of-type{
+        flex-basis: 100%;
+    }
+    .box1 h2{
+        font-size: 1.8rem;
+        margin-bottom: 0;
+    }
+    .nav-ul{
+        flex-wrap: wrap;
+    }
+    .nav-ul li:last-of-type{
+        flex-basis: 100%;
+        margin-top: 20px;
+    }
+ }
