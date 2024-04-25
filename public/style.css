@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins','San-serif';
+}
+ body{
+    background-color: #373636;
+    height: 90vw;
+ }
+     
+/* toggle in label designing */
+.toggle {
+    margin-top: 5PX;
+    position : relative ;
+    display: flex;
+    width : 130PX;
+    height : 52px;
+    border-radius: 30px;
+    border: 2px solid gray;
+}
+       
+/* After slide changes */
+.toggle:after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: gray;
+    top: 0px; 
+    left: 0px;
+    transition:  all 0.5s;
+}
+       
+/* Toggle text */
+.dark-mode-div p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 14px;
+}
+       
+/* Checkbox checked effect */
+.checkbox:checked + .toggle::after {
+    left : 67px; 
+}
+       
+/* Checkbox checked toggle label bg color */
+.checkbox:checked + .toggle{
+    background-color: gray;
+}
+.checkbox:checked + .toggle::after{
+    background-color: white;
+}
+       
+/* Checkbox vanished */
+.checkbox { 
+    display : none;
+}
+.dark-mode-div{
+    margin-top: 13px;
+}
+nav{
+    margin-left: 30px;
+    width: 80%;
+    margin-inline: auto;
+}
+.nav-ul{
+    display: flex;
+    list-style: none;
+    margin-top: 40px;
+    align-items: center;
+}
+.li{
+    margin-right: 20px;
+}
+.search-bar{
+    background-color: #444444;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin-bottom: -12px;
+    flex: 2;
+    box-shadow: 10px 5px 5px ;
+
+}
+input::placeholder{
+    color: #FFFFFF;
+    opacity: 60%;
+}
+input[type=text]{
+    background: transparent;
+    height: 30px;
+    width: 100%;
+    border: none;
+    color: #FFFFFF;
+}
+input[type=text]:focus{
+    border: none;
+    outline: none;
+}
+.search-svg{
+    width: 30px;
+    margin: 12px 12px 0 10px;
+    fill: #FFFFFF;
+    opacity: 60%;
+}
+.target-svg{
+    width: 30px;
+    align-self: center;
+}
+.target-div{
+    display: flex;
+    justify-content: center;
+}
+.target-bar p{
+    color: #FFFFFF;
+    align-self: center;
+}
+.target-bar{
+    background-color: #4CBB17;
+    border-radius: 40px;
+    display: flex;
+    height: 50px;
+    width: 800px;
+    margin-bottom: -12px;
+    flex: 1;
+    padding-left: 15px;
+    box-shadow: 10px 5px 5px;
+}
+.checkbox-li{
+    flex: 0.5;
+}
+main{
+    width: 80%;
+    margin-inline: auto;
+    margin-top: 40px;
+}
+.body{
+    display: flex;
+    gap: 25px;
+}
+.box1{
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 40px;
+    box-shadow: 10px 5px 5px black;
+    flex: 1;
+    background-color: #444444;
+    font-size: 36px;
+    text-align: center;
+}
+.box1 h2{
+    font-size: 1.3rem;
+    margin-bottom: 70px;
+}
+.under-text{
+    font-size: 0.9rem;
+    padding: 0;
+    margin-top: -13px;
+    opacity: 60%;
+}
+.time{
+    font-size: 4rem;
+    font-weight: bold;
+}
+.box2{
+    font-size: 3rem;
+    color: #FFFFFF;
+    display: flex;
+    border-radius: 40px;
+    box-shadow: 10px 5px 5px black;
+    background-color: #444444;
+    flex: 2;
+    padding: 0 0 20px 20px;
+}
+
+.inner-box{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.inner-sunrise-box{
+    display: flex;
+    align-items: center;
+}
+
+.inner-sunset-box{
+    display: flex;
+}
+
+.inner-box svg{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.inner-box p{
+    font-size: 1rem;
+}
+
+.sun{
+    width: 10rem;
+}
+
+.sun-undertext{
+    text-align: center;
+}
+.outer-factors-box{
+    display: flex;
+    font-size: 20px;
+    flex: 1;
+    gap: 20px;
+    padding: 10px;
+}
+.outer-factors-box svg{
+    width: 30px;
+    padding-top: 20px;
+}
+.first{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+.second{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lower-box1{
+    color: #FFFFFF;
+    display: flex;
+    border-radius: 40px;
+    box-shadow: 10px 5px 5px black;
+    background-color: #444444;
+    flex: 1;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.lower-box1 h2{
+    text-align: center;
+}
+
+.li1{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+.li1 p:last-of-type{
+    justify-self: flex-end;
+    margin-left: auto;
+}
+.lower-box1 li svg{
+    width: 60px;
+}
+li{
+    list-style: none;
+}
+.outer-lower-box{
+    display: flex;
+    gap: 20px;
+}
+.lower-box2{
+    color: #FFFFFF;
+    display: flex;
+    border-radius: 40px;
+    box-shadow: 10px 5px 5px black;
+    background-color: #444444;
+    flex: 2;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 20px;
+}
+.lower-box2 h2{
+    text-align: center;
+}
+.lower-box2 ul{
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.second-li{
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+    display: flex;
+    border-radius: 40px;
+    box-shadow: 10px 5px 5px black;
+    background-color: #373636;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 20px;
+    opacity: 100%;
+    align-items: center;
+}
