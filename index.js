@@ -6,7 +6,7 @@ import { config } from 'dotenv';
 
 config()
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const apiKey = process.env.APIKEY
 const API_URL = process.env.API_URL
 const API_FORECAST = process.env.API_FORECAST
