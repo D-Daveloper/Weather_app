@@ -13,7 +13,6 @@
      
 /* toggle in label designing */
 .toggle {
-    margin-top: 5PX;
     position : relative ;
     display: flex;
     width : 130PX;
@@ -59,9 +58,6 @@
 .checkbox { 
     display : none;
 }
-.dark-mode-div{
-    margin-top: 13px;
-}
 nav{
     margin-left: 30px;
     width: 80%;
@@ -71,22 +67,20 @@ nav{
     display: flex;
     list-style: none;
     margin-top: 40px;
-    align-items: center;
+    align-items: center  ;
+    gap: 20px;
 }
-.li{
-    margin-right: 20px;
-}
+
 .search-bar{
     background-color: #444444;
     border-radius: 40px;
     display: flex;
     align-items: center;
-    height: 50px;
+    justify-content: center;
     width: 100%;
-    margin-bottom: -12px;
     flex: 2;
     box-shadow: 10px 5px 5px ;
-
+    flex-direction: row-reverse;
 }
 input::placeholder{
     color: #FFFFFF;
@@ -94,18 +88,22 @@ input::placeholder{
 }
 input[type=text]{
     background: transparent;
-    height: 30px;
-    width: 100%;
+    width: 90%;
     border: none;
     color: #FFFFFF;
+    margin-left: auto;
+
 }
 input[type=text]:focus{
     border: none;
     outline: none;
 }
+.search-icon-container{
+    display: flex;
+}
 .search-svg{
-    width: 30px;
-    margin: 12px 12px 0 10px;
+    width: 33px;
+    height: 33px;
     fill: #FFFFFF;
     opacity: 60%;
 }
@@ -119,22 +117,26 @@ input[type=text]:focus{
 }
 .target-bar p{
     color: #FFFFFF;
-    align-self: center;
+    font-size: clamp(1rem, 1.4rem, 1.5rem);
+}
+@media (max-width:1025px) {
+    .target-bar p{
+        font-size: 1rem;
+    }
+}
+@media (max-width:825px) {
+    .target-bar p{
+        font-size: 0.8rem;
+    }
 }
 .target-bar{
     background-color: #4CBB17;
     border-radius: 40px;
     display: flex;
-    height: 50px;
-    width: 800px;
-    margin-bottom: -12px;
     flex: 1;
-    padding-left: 15px;
     box-shadow: 10px 5px 5px;
 }
-.checkbox-li{
-    flex: 0.5;
-}
+
 main{
     width: 80%;
     margin-inline: auto;
@@ -245,7 +247,6 @@ main{
     border-radius: 40px;
     box-shadow: 10px 5px 5px black;
     background-color: #444444;
-    /* flex: 1; */
     flex-direction: column;
     margin-top: 20px;
     padding: 20px;
@@ -309,6 +310,18 @@ li{
     opacity: 100%;
     align-items: center;
 }
+
+.location{
+    background: none;
+    border: transparent;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    align-items: center;
+}
+
  @media (max-width:935px) {
     .box2{
         flex-wrap: wrap;
@@ -316,6 +329,9 @@ li{
     .outer-factors-box{
         width: 100%;
         justify-content: space-between;
+    }
+    input[type=text]{
+        margin-left: 10px;
     }
  }
  @media (max-width:670px) {
@@ -344,5 +360,8 @@ li{
     .nav-ul li:last-of-type{
         flex-basis: 100%;
         margin-top: 20px;
+    }
+    .target-bar p{
+        font-size: 1.4rem
     }
  }

@@ -23,18 +23,20 @@
 
             </li>
             <li class="li search-bar">
-                <div>
+                <div class="search-icon-container">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 101 101" id="search" class="search-svg"><path d="M63.3 59.9c3.8-4.6 6.2-10.5 6.2-17 0-14.6-11.9-26.5-26.5-26.5S16.5 28.3 16.5 42.9 28.4 69.4 43 69.4c6.4 0 12.4-2.3 17-6.2l20.6 20.6c.5.5 1.1.7 1.7.7.6 0 1.2-.2 1.7-.7.9-.9.9-2.5 0-3.4L63.3 59.9zm-20.4 4.7c-12 0-21.7-9.7-21.7-21.7s9.7-21.7 21.7-21.7 21.7 9.7 21.7 21.7-9.7 21.7-21.7 21.7z"></path></svg>
                 </div>
                 <input type="text" placeholder="search for a city...">
             </li>
             <li class="li target-bar">
-                <div class="target-div">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="target" class="target-svg"><path d="M12,9a3,3,0,1,0,3,3A3,3,0,0,0,12,9Zm0,4a1,1,0,1,1,1-1A1,1,0,0,1,12,13Zm9-2H19.93A8,8,0,0,0,13,4.07V3a1,1,0,0,0-2,0V4.07A8,8,0,0,0,4.07,11H3a1,1,0,0,0,0,2H4.07A8,8,0,0,0,11,19.93V21a1,1,0,0,0,2,0V19.93A8,8,0,0,0,19.93,13H21a1,1,0,0,0,0-2Zm-9,7a6,6,0,1,1,6-6A6,6,0,0,1,12,18Z"></path></svg> 
-                </div>
-                <p>
-                    Current Location
-                </p>
+                <button id="location" class="location" action="/api/location'" method="POST">
+                    <div class="target-div">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="target" class="target-svg"><path d="M12,9a3,3,0,1,0,3,3A3,3,0,0,0,12,9Zm0,4a1,1,0,1,1,1-1A1,1,0,0,1,12,13Zm9-2H19.93A8,8,0,0,0,13,4.07V3a1,1,0,0,0-2,0V4.07A8,8,0,0,0,4.07,11H3a1,1,0,0,0,0,2H4.07A8,8,0,0,0,11,19.93V21a1,1,0,0,0,2,0V19.93A8,8,0,0,0,19.93,13H21a1,1,0,0,0,0-2Zm-9,7a6,6,0,1,1,6-6A6,6,0,0,1,12,18Z"></path></svg> 
+                    </div>
+                    <p>
+                        Current Location
+                    </p>
+                </button>
             </li>
         </ul>
     </nav>
