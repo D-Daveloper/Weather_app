@@ -10,9 +10,10 @@ const port = process.env.PORT || 3000;
 const apiKey = process.env.APIKEY
 const API_URL = process.env.API_URL
 const API_FORECAST = process.env.API_FORECAST
+const GEO_URL = process.env.GEO_URL
 
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 
@@ -62,10 +63,51 @@ function gethourlyattributes(array){
     }
     return [time,temp,meter]
 }
+app.post("/city", async (req,res) => {
+  const location = req.body.location;
+  try {
+    const geo_location = await axios.get(GEO_URL, {
+      params: {
+          q:location,
+          apiKey: apiKey
+      },
+    })
+    const result = await axios.get(API_URL, {
+      params: {
+          lat: geo_location.data[0].lat,
+          lon: geo_location.data[0].lon,
+          units: "Metric",
+          apiKey: apiKey,
+    },
+  })
+    const forecast = await axios.get(API_FORECAST,{
+      params: {
+          lat: geo_location.data[0].lat,
+          lon: geo_location.data[0].lon,
+          units: "Metric",
+          apiKey: apiKey,
+      },
+    })
+      const hourly_forecast = forecast.data.list
+      const [hour,temp, meter] = gethourlyattributes(hourly_forecast)
+      const data = {
+      time:localTime,
+      date: formattedDate,
+      sunrise_time: getTime(result.data.sys.sunrise),
+      sunset_time: getTime(result.data.sys.sunset),
+      wind_speed: ConvertMeter(result.data.wind.speed),
+      hour: hour,
+      hourTemp : temp,
+      windSpeed: meter
+  }
+    res.render("index", { content:result.data, time:data});
+  } catch (error) {
+    res.status(404).send(error.message);
+  }
+})
 
 app.post('/api/location', async (req, res) => {
   const { latitude, longitude } = req.body;
-  // console.log("Received location data:", latitude, longitude);
   try {
     const result = await axios.get(API_URL, {
       params: {

@@ -67,7 +67,6 @@ nav{
     display: flex;
     list-style: none;
     margin-top: 40px;
-    align-items: center  ;
     gap: 20px;
 }
 
@@ -100,12 +99,19 @@ input[type=text]:focus{
 }
 .search-icon-container{
     display: flex;
+    background: #FFFFFF;
+    border: 0 5px 0 0;
+    cursor: pointer;
+    border-radius: 40px;
+}
+.nav-ul form{
+    flex: 2;
 }
 .search-svg{
     width: 33px;
     height: 33px;
-    fill: #FFFFFF;
-    opacity: 60%;
+    fill: #444444;
+    /* opacity: 60%; */
 }
 .target-svg{
     width: 30px;
@@ -356,6 +362,7 @@ li{
     }
     .nav-ul{
         flex-wrap: wrap;
+        gap: 0;
     }
     .nav-ul li:last-of-type{
         flex-basis: 100%;
